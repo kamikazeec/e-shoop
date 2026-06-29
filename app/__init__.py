@@ -16,6 +16,9 @@ def create_app():
 
     #MODELOS
     from app.models import Usuario
+    from app.models import Categoria
+    from app.models import Pedido, DetallePedido
+    from app.models import Producto
     
 #blueprints
     from app.blueprints.public import public_bp
