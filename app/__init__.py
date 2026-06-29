@@ -10,8 +10,12 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
+# Inicializar base de datos
     db.init_app(app)
     migrate.init_app(app, db)
+
+    #MODELOS
+    from app.models import Usuario
     
 #blueprints
     from app.blueprints.public import public_bp
