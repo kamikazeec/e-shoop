@@ -13,6 +13,9 @@ class Usuario(db.Model):
     activo = db.Column(db.Boolean, default=True)
     fecha_creacion = db.Column(db.DateTime, default=datetime.now())
 
+    # Relaciones
+    pedidos = db.relationship('Pedido', backref='cliente', lazy=True)
+
     # -- METODOS DE CONTRASEÑA
     def set_password(self, password_plano):
         """ Hash a la contraseña en texto plano"""
